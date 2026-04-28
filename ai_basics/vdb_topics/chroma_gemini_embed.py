@@ -1,5 +1,6 @@
 import os
 import chromadb
+from datetime import datetime
 from dotenv import load_dotenv, find_dotenv
 from helpers.gemini_embed_v2 import GeminiGenAiEmbeddingFunction
 
@@ -35,10 +36,14 @@ def main():
     """Main function"""
     client = get_client(vdb_path=env.get("VECTOR_DB_PATH"))
     colln = client.get_or_create_collection(
-        name=env.get("VECTOR_DB_COLLN"),
+        name=env.get("TEST_COLLN_GEMINI", "test_colln_gemini"),
         embedding_function=get_gemini_embed_encoder_v2(),
+        metadata={
+            "description": "Chroma DB Test Collection",
+            "created": str(datetime.now()),
+        }
     )
-    colln.add(
+    colln.upsert(
         documents=["Gemini 2.5 Flash is highly efficient.", "ChromaDB is a vector database."],
         ids=["id1", "id2"]
     )

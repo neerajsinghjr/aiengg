@@ -16,7 +16,7 @@ def chroma_in_memory_client():
     colln = client.get_or_create_collection("test_colln_001")
 
     # adding data to collection;;
-    colln.add(
+    colln.upsert(
         ids=["id1", "id2"],
         documents=[
             "This is a test record for first collection",
