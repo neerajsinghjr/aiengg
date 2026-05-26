@@ -7,11 +7,11 @@ MODELS = {
         "api_key": "LLAMA_API_KEY",
     },
     "2": {
-        "model_name": "llama",
-        "version": "3.2:1b",
-        "model_id": "llama3.2:1b",
-        "api_url": "LLAMA_API_URL",
-        "api_key": "LLAMA_API_KEY",
+        "model_name": "gemma",
+        "version": "latest",
+        "model_id": "gemma:latest",
+        "api_url": "GEMMA_API_URL",
+        "api_key": "GEMMA_API_KEY",
     }
 }
 QUIT = ["quit", "exit", "babye", "bye-bye", "bye", "goodbye", "ba-bye"]

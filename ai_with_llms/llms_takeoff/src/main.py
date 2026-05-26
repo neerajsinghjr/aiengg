@@ -34,9 +34,8 @@ def _load_chat_welcome_menu():
     print("#====================================#")
     print("# Welcome to our llm takeoff journey #")
     print("#====================================#")
-    print("# 1. Llama 3.2")
-    print("# 2. Llama 3.2:1b")
-    print("# 3. ChatGPT OSS")
+    print("# 1. Llama")
+    print("# 2. Gemma")
     return
 
 def load_chat_welcome_menu():
@@ -48,7 +47,6 @@ def load_chat_welcome_menu():
 
 def initialize_llm_chat_mode() -> str:
     llm_pref = load_chat_welcome_menu()
-    while llm_pref not in MODELS:
     while llm_pref not in MODELS:
         print("#====================================#")
         print("Error: Invalid Model Choice")
@@ -64,7 +62,7 @@ def initialize_llm_chat_mode() -> str:
 def llm_run():
     llm_pref = initialize_llm_chat_mode()
     print("#====================================#")
-    print(f"# One moment, waking up our girly llm {llm_model}")
+    print(f"# One moment, waking up our llm {llm_model}")
     user_greetings = get_user_greetings(llm_pref)
     print("#====================================#")
     print("llama: {}".format(user_greetings))
