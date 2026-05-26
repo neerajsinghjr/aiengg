@@ -75,7 +75,7 @@ def llm_run():
         else:
             print(f"{llm_model} is Thinking ...")
             llm_answer = get_llama_response(llm_pref, user_ask)
-            print("llama: {}".format(llm_answer))
+            print(f"{llm_model}: {llm_answer}")
 
 
 def initialize_llm():
