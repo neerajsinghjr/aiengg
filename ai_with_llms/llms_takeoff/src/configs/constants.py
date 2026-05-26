@@ -8,8 +8,8 @@ MODELS = {
     },
     "2": {
         "model_name": "llama",
-        "version": "3.2:b",
-        "model_id": "llama3.2:b",
+        "version": "3.2:1b",
+        "model_id": "llama3.2:1b",
         "api_url": "LLAMA_API_URL",
         "api_key": "LLAMA_API_KEY",
     }

@@ -35,7 +35,8 @@ def _load_chat_welcome_menu():
     print("# Welcome to our llm takeoff journey #")
     print("#====================================#")
     print("# 1. Llama 3.2")
-    print("# 2. Llama 3.3")
+    print("# 2. Llama 3.2:1b")
+    print("# 3. ChatGPT OSS")
     return
 
 def load_chat_welcome_menu():
@@ -47,6 +48,7 @@ def load_chat_welcome_menu():
 
 def initialize_llm_chat_mode() -> str:
     llm_pref = load_chat_welcome_menu()
+    while llm_pref not in MODELS:
     while llm_pref not in MODELS:
         print("#====================================#")
         print("Error: Invalid Model Choice")
@@ -76,8 +78,16 @@ def llm_run():
             print(f"{llm_model} is Thinking ...")
             llm_answer = get_llama_response(llm_pref, user_ask)
             print("llama: {}".format(llm_answer))
-    print("#====================================#")
 
 
 def initialize_llm():
-    llm_run()
+    try:
+        llm_run()
+    except KeyboardInterrupt as ex:
+        print("#====================================#")
+        print("Terminating App, External Intervention")
+    except Exception as ex:
+        print("#====================================#")
+        print(f"Error: Something Went Wrong TakingOff with Ex: {ex}")
+    finally:
+        print("#====================================#")
