@@ -71,7 +71,7 @@ def llm_run():
         print("#====================================#")
         user_ask = input("User: ")
         if user_ask.lower() in QUIT:
-            print(f"{llm_model} is on rollercoaster down ... bye")
+            print(f"{llm_model} is on rollercoaster woohoo ... bye")
             break
         else:
             print(f"{llm_model} is Thinking ...")
@@ -84,9 +84,9 @@ def initialize_llm():
         llm_run()
     except KeyboardInterrupt as ex:
         print("#====================================#")
-        print("Terminating App, External Intervention")
+        print("# Terminating App, External Intervention")
     except Exception as ex:
         print("#====================================#")
-        print(f"Error: Something Went Wrong TakingOff with Ex: {ex}")
+        print(f"# Error: Something Went Wrong TakingOff with Ex: {ex}")
     finally:
         print("#====================================#")
