@@ -68,14 +68,15 @@ def llm_run():
     print("llama: {}".format(user_greetings))
     while True:
         print("#====================================#")
-        user_ask = input("User: ")
-        if user_ask.lower() in QUIT:
-            print(f"{llm_model} is on rollercoaster down ... bye")
-            break
-        else:
-            print(f"{llm_model} is Thinking ...")
-            llm_answer = get_llama_response(llm_pref, user_ask)
-            print(f"{llm_model}: {llm_answer}")
+        user_ask = input("User: ").strip()
+        if len(user_ask) > 0:
+            if user_ask.lower() in QUIT:
+                print(f"{llm_model} is on rollercoaster woohoo ... bye")
+                break
+            else:
+                print(f"{llm_model} is Thinking ...")
+                llm_answer = get_llama_response(llm_pref, user_ask)
+                print(f"{llm_model}: {llm_answer}")
 
 
 def initialize_llm():
