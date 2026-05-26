@@ -1,9 +1,7 @@
-import os
 from typing import Dict
 from openai import OpenAI
-from chromadb.utils import lru_cache
-from src.configs.app_env import app_env
-from src.configs.constants import MODELS
+from llms_takeoff.src.configs.app_env import app_env
+from llms_takeoff.src.configs.constants import MODELS
 
 
 def get_open_api_client(model_id):

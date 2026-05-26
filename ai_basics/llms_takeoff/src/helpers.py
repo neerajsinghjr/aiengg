@@ -1,5 +1,5 @@
-from src.configs.constants import MODELS
-from src.llms import awaiting_llama_reply
+from llms_takeoff.src.configs.constants import MODELS
+from llms_takeoff.src.llms import awaiting_llama_reply
 
 
 def asking_llm_model(llm_pref: str, user_ask: str):

@@ -2,9 +2,10 @@ import sys
 from os import environ as env
 from typing import Dict, List
 
-from src.configs.app_env import app_env
-from src.configs.constants import MODELS, QUIT
-from src.helpers import asking_llm_model
+import os
+from llms_takeoff.src.configs.app_env import app_env
+from llms_takeoff.src.configs.constants import MODELS, QUIT
+from llms_takeoff.src.helpers import asking_llm_model
 
 
 llm_model = None
